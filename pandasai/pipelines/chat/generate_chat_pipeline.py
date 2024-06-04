@@ -58,11 +58,11 @@ class GenerateChatPipeline:
                 ValidatePipelineInput(),
                 CacheLookup(),
                 PromptGeneration(
-                    skip_if=self.is_cached,
+                    #skip_if=self.is_cached,
                     on_execution=on_prompt_generation,
                 ),
                 CodeGenerator(
-                    skip_if=self.is_cached,
+                    #skip_if=self.is_cached,
                     on_execution=on_code_generation,
                 ),
                 CachePopulation(skip_if=self.is_cached),
